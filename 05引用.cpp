@@ -17,5 +17,5 @@ void main()
     printf("dd=%d\n", dd);
     int gamecontrolnumber = 9;
     int &gcn = gamecontrolnumber;
-    //引用的价值：方便使用变量名。
+    //引用的价值:方便使用变量名。
 }

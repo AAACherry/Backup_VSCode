@@ -34,7 +34,7 @@ namespace Name_1 //同一个命名空间（命名污染），也可以特意在�
     char ch;
 }
 
-namespace N = Name_1; //取别名，可简化命名空间名，增加可读性
+namespace N = Name_1; //取别名，可简化命名空间名，增加可读性.
 
 int main()
 {

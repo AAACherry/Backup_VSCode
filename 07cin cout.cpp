@@ -13,7 +13,7 @@ int main()
     int num2;
     cin >> num2;
     cout << "num2=" << num2 << endl;
-    //要想简化代码，省去STD，先using namespace std;
+    //要想简化代码，省去STD,先using namespace std;
     int a, b, c, d, e, f;
     cin >> a >> b >> c >> d >> e >> f;
     cout << a << b << c << d << e << f << endl;

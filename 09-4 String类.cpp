@@ -19,7 +19,7 @@ int main()
     char ch = str[2]; //直接得到下标为2的字符
     ch = str.at(1);   //得到下标为1的字符
     str.length();     //求string的长度
-    // str.clear();//清空字符串，清空string中的内容
+    // str.clear();//清空字符串,清空string中的内容
     str.empty(); //判断是否为空
     str == str;  //直接通过==去对比两个字符串
 
