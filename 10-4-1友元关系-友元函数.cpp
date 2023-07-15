@@ -4,7 +4,7 @@ using namespace std;
 class A
 {
     int num;                        //直接写的成员，默认是私有的。
-    friend void test_Func_1(A obj); //友元的声明。friend友元关键字,把哪个函数当朋友就把哪个函数的函数头放过来//A类把test_Func_1当成好朋友,此时test_Func_1函数中的obj.num就可以用了
+    friend void test_Func_1(A obj); //友元的声明，可以写在public/private/protect，只要是在类中这样声明的就是友元。friend友元关键字,把哪个函数当朋友就把哪个函数的函数头放过来//A类把test_Func_1当成好朋友,此时test_Func_1函数中的obj.num就可以用了。
 public:
     A() { num = 0; } //写一个A类的共有的构造函数,在A类中给num=0（给个初始化值）
 };
