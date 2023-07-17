@@ -66,7 +66,15 @@ public:
     Father();
     ~Father();
 
+public:
+    int pub;           //创建一个公有的数据成员
+    void pub_func() {} //创建一个公有的成员函数
 private:
+    int pri;           //创建一个私有的数据成员
+    void pri_func() {} //创建一个私有的成员函数
+protected:
+    int pro;           //创建一个保护的数据成员
+    void pro_func() {} //创建一个保护的成员函数
 };
 
 class Son : public Father //继承写在子类的后面，在子类的后面声明一下继承的关系,public继承是最常见的，一般很少用私有继承，只有在一些特殊情况才可以去用 private 继承，保护继承用的也不多
@@ -75,11 +83,44 @@ public:
     Son();
     ~Son();
 
+public:
+    int num;
+    void test_Func_public() //在类的里面创建一个函数，属于在类的里面了
+    {
+        this->num;        //在类的里面有this指针，通过this指针可以访问到它自己的num;
+        this->pub;        //继承过来的公有的肯定可以被访问;
+        this->pub_func(); //继承过来的公有的肯定可以被访问;
+
+        this->pro;        //公有方式继承过来的父类的被保护的成员在子类中也是可以从内部访问
+        this->pro_func(); //同理
+
+        // this->pri;//父类本身私有的成员无论用什么方式继承都无法访问
+        // this->pri_func();//同理
+    }
+
 private:
+protected:
 };
 
 int main()
 {
+    cout << "sizeof(Father):" << sizeof(Father) << endl; //查看当前Father类类型的对象要占多少个字节的内存（3个int，3X4=12）
+    cout << "sizeof(Son):" << sizeof(Son) << endl;       //查看当前Father类类型的对象要占多少个字节的内存（子类虽然什么都没写，但是继承了父类的，所以也是12个字节，自己虽然没有新增，但也是12个在字节）
+    //在Son子类中新增定义一个int类型的num，内存就变为12+4=16个字节
+
+    //看看Son子类能够访问的父类的访问权限
+    Son obj_son;
+
+    obj_son.num; //自身的public成员，可以访问
+
+    obj_son.pub;        //父类继承过来的public数据成员，可以访问
+    obj_son.pub_func(); //父类继承过来的public成员函数，可以访问
+
+    // obj_son.pri;//父类继承过来的private成员，无法访问
+    // obj_son.pri_func(); //父类继承过来的private成员函数，不可访问
+
+    //  obj_son.pro;//父类继承过来的protected成员，无法访问。属于是被保护的，在类外无法被访问
+    //  obj_son.pro_func(); //父类继承过来的protected成员函数，不可访问，属于是被保护的，在类外无法被访问
     return 0;
 }
 //将构造函数和析构函数放在主函数后面
