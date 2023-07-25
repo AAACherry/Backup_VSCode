@@ -11,7 +11,7 @@ public:
     ~Mycomplex();
     void display() const; //显示当前所构建的虚数的对象里面的数据，只给显示，不给修改
 
-    Mycomplex &operator+(const Mycomplex &other) const;
+    Mycomplex &operator+(const Mycomplex &other) const; //属于是写成成员函数
 
     friend Mycomplex &operator+(const Mycomplex &obj1, int num); //声明为友元函数，这个函数就能访问私有成员了
 
@@ -47,7 +47,7 @@ int main()
     obj_3 = operator+(obj_1, 6); //翻译一下，obj_1和6都作为参数，传给operator+()函数。然后用obj_3去接收一下
     obj_3.display();
     //全局的也可以是直接调函数的写法，也可以是加的写法。
-    // 缺陷
+    // 缺陷：
     // obj_3 = 6 + obj_1;//不能这么写，因为没有这个重载，6在前面，6是第一个参数
     // obj_3 = operator+(6, obj_1); //相当于这种写法。如果需要换这个顺序的话，就应该调换一下参数位置，重新写一个重载
     obj_3.display();
