@@ -1,6 +1,11 @@
 {
   "files.associations": {
     "iostream": "cpp",
-    "ostream": "cpp"
+    "ostream": "cpp",
+    "iosfwd": "cpp",
+    "exception": "cpp",
+    "memory": "cpp",
+    "system_error": "cpp",
+    "xutility": "cpp"
   }
 }
