@@ -42,6 +42,20 @@ void test_Func_1(MyData<int, double> &obj) //普通全局函数，直接指定�
     obj.showData();
 }
 
+//第二种，把函数的参数模板化(把它也写成一个模板)
+template <typename TT1, typename TT2>
+void test_Func_2(MyData<TT1, TT2> &obj)
+{
+    obj.showData();
+}
+
+//把整体的参数都写成一个模板
+template <class T>
+void test_Func_3(T &obj)
+{
+    obj.showData();
+}
+
 int main()
 {
 
@@ -53,6 +67,20 @@ int main()
 
     MyData<char, float> data_3(68, 3.14f);
     data_3.showData();
+
+    test_Func_2(data_1);              //隐式
+    test_Func_2<int, double>(data_1); //显式
+
+    test_Func_2(data_2); //不写类型也能自动推导出来。
+    test_Func_2<char, double>(data_2);
+
+    //相当于把整体的( MyData<char, float>)类型就直接赋给了T，然后T就做一个这样的对象的引用
+    test_Func_3(data_1);
+    test_Func_3<MyData<>>(data_1);
+    test_Func_3(data_2);
+    test_Func_3<MyData<char>>(data_2);
+    test_Func_3(data_3);
+    test_Func_3<MyData<char, float>>(data_3);
 
     return 0;
 }
