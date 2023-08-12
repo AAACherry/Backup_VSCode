@@ -17,7 +17,16 @@ int main()
 
         obj.close();//关闭文件，不需要参数
         obj.is_open();//判断一下是否成功打开了文件，不需要参数
-        obj.eof();//eof--end of file是否到达了文件尾，不需要参数 */
+        obj.eof();//eof--end of file是否到达了文件尾，不需要参数
+
+        obj.open("test_1.txt",ios::in);
+        obj.get(ch);
+
+        ch=obj.get();//get函数是有重载的(有5个重载)。//也可以用这种方式去调用(有多种方式可以去调用)
+
+        cout<<ch<<endl;
+        obj.close();//不管怎么样，打开了要关闭。
+        */
 
     return 0;
 }
