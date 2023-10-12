@@ -60,7 +60,7 @@ int main(int argc, char *argv[])
 
     num = process(mux, 2, 3);
     printf("num= %d\n", num);
- 
+
     num = process(dive, 2, 3);
     printf("num= %d\n", num);
 
