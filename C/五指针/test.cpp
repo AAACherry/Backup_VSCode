@@ -1,3 +1,6 @@
+// #include <bits/stdc++.h>
+//
+
 /* Note:Your choice is C IDE */
 #include "stdio.h"
 #include "string.h"
