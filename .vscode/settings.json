@@ -6,6 +6,7 @@
     "exception": "cpp",
     "memory": "cpp",
     "system_error": "cpp",
-    "xutility": "cpp"
+    "xutility": "cpp",
+    "stdio.h": "c"
   }
 }
