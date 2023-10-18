@@ -8,6 +8,7 @@
     "system_error": "cpp",
     "xutility": "cpp",
     "stdio.h": "c",
-    "thread": "c"
+    "thread": "c",
+    "string.h": "c"
   }
 }
